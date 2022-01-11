@@ -50,7 +50,7 @@ fun ThingItem(thing: Thing, navController: NavController) {
             .fillMaxSize()
             .clickable {
                 navController.navigate(
-                    InternalHomeFeatureApi.screenB(parameter = thing.id)
+                    InternalHomeFeatureApi.screenDetail(parameter = thing.id)
                 )
             },
         elevation = 2.dp,

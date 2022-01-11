@@ -1,31 +1,18 @@
 package com.example.feature.home.impl.internal
 
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavHostController
-import androidx.navigation.NavType
+import androidx.navigation.*
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
-import androidx.navigation.navigation
 import com.example.core.feature_api.FeatureApi
-import com.example.feature.home.impl.ScreenDetail
-import com.example.feature.home.impl.ScreenOrder
+import com.example.feature.home.impl.DetailScreen
 
-/**
- * Внутренне API фичи для навигации по внутренним экранам
- */
 internal object InternalHomeFeatureApi : FeatureApi {
 
-    private const val scenarioDetailOrderRoute = "home/scenarioDetailOrderRoute"
+    private const val scenarioRoute = "home/scenarioRoute"
     private const val parameterKey = "parameterKey"
-    private const val screenOrderRoute = "home/screenOrder"
-    private const val screenDetailRoute = "home/detailScreen"
+    private const val screenDetailRoute = "home/screenDetail"
 
-    fun scenarioDetailOrderRoute() = scenarioDetailOrderRoute
-
-    fun screenA() = screenDetailRoute
-
-    fun screenB(parameter: Int) = "$screenOrderRoute/${parameter}"
+    fun screenDetail(parameter: Int) = "$screenDetailRoute/${parameter}"
 
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
@@ -34,21 +21,17 @@ internal object InternalHomeFeatureApi : FeatureApi {
     ) {
 
         navGraphBuilder.navigation(
-            route = scenarioDetailOrderRoute,
+            route = scenarioRoute,
             startDestination = screenDetailRoute
         ) {
 
-            composable(route = screenDetailRoute) {
-                ScreenDetail(modifier = modifier, navController = navController)
-            }
-
             composable(
-                route = "$screenOrderRoute/{$parameterKey}",
+                route = "$screenDetailRoute/{$parameterKey}",
                 arguments = listOf(navArgument(parameterKey) { type = NavType.StringType })
             ) { backStackEntry ->
                 val arguments = requireNotNull(backStackEntry.arguments)
                 val argument = arguments.getString(parameterKey)
-                ScreenOrder(modifier = modifier, argument = argument.orEmpty())
+                DetailScreen(modifier = modifier, argument = argument.orEmpty())
             }
         }
     }
