@@ -1,0 +1,22 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "MyApplication"
+include ':app',
+        ':core',
+        ':core:feature-api',
+        ':core:dependencyprovider',
+
+        ':feature',
+        ':feature:home-api',
+        ':feature:home-impl',
+        ':feature:profile-api',
+        ':feature:profile-impl',
+        ':feature:first-api',
+        ':feature:first-impl',
+        ':feature:search-api',
+        ':feature:search-impl'

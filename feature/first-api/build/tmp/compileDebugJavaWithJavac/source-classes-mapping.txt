@@ -1,0 +1,2 @@
+com/example/api/first/BuildConfig.java
+ com.example.api.first.BuildConfig
