@@ -37,5 +37,9 @@ dependencies {
 
     implementation project(":core:feature-api")
     implementation project(':feature:basket-api')
+    implementation project(':feature:home-api')
+    implementation project(':feature:home-impl')
+    implementation project(":core:dependencyprovider")
+
 
 }

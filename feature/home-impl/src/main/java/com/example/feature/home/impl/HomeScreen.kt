@@ -66,6 +66,7 @@ fun ThingItem(thing: Thing, navController: NavController) {
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.Start,
             ) {
+                Box(modifier = Modifier.size(100.dp))
                 Text(
                     text = thing.name ?: "name",
                     color = Color.Black,

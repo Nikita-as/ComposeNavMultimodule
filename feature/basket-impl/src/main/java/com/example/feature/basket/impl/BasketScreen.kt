@@ -3,14 +3,21 @@ package com.example.feature.basket.impl
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.core.dependencyprovider.DependencyProvider.homeFeature
 
 @Composable
-fun BasketScreen(modifier: Modifier) {
+fun BasketScreen(modifier: Modifier, navController: NavController) {
     Column(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -20,5 +27,19 @@ fun BasketScreen(modifier: Modifier) {
             "Корзина",
             fontSize = 28.sp
         )
+        Button(
+            modifier = Modifier.padding(16.dp),
+            onClick = {
+                navController.navigate(
+                    route = homeFeature().homeRoute()
+                )
+            },
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = Color.Magenta,
+                contentColor = Color.White
+            )
+        ) {
+            Text(text = "Переход на главную")
+        }
     }
 }

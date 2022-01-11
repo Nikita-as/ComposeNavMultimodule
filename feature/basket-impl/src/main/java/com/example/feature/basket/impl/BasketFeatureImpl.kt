@@ -1,6 +1,7 @@
 package com.example.feature.basket.impl
 
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
@@ -18,7 +19,7 @@ class BasketFeatureImpl : BasketFeatureApi {
         modifier: Modifier
     ) {
         navGraphBuilder.composable(route) {
-            BasketScreen(modifier = modifier)
+            BasketScreen(modifier = modifier, navController = navController)
         }
     }
 }
