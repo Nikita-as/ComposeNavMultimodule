@@ -3,4 +3,5 @@
     <string name="home">Главная</string>
     <string name="search">Каталог</string>
     <string name="profile">Профиль</string>
+    <string name="basket">Корзина</string>
 </resources>

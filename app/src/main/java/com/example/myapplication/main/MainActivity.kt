@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
 import com.example.core.dependencyprovider.DependencyProvider
+import com.example.feature.basket.impl.BasketFeatureImpl
 import com.example.feature.first.impl.FirstFeatureImpl
 import com.example.feature.home.impl.HomeFeatureImpl
 import com.example.feature.profile.impl.ProfileFeatureImpl
@@ -20,10 +21,9 @@ class MainActivity : ComponentActivity() {
             firstFeatureApi1 = FirstFeatureImpl(),
             homeFeatureApi = HomeFeatureImpl(),
             searchFeatureApi = SearchFeatureImpl(),
+            basketFeatureApi = BasketFeatureImpl(),
             profileFeatureApi = ProfileFeatureImpl()
-
         )
-
         setContent {
             MyApplicationTheme() {
                 AppContent()

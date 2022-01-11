@@ -70,4 +70,6 @@ dependencies {
     implementation project(':feature:first-impl')
     implementation project(':feature:search-api')
     implementation project(':feature:search-impl')
+    implementation project(':feature:basket-api')
+    implementation project(':feature:basket-impl')
 }

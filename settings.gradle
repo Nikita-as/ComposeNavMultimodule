@@ -19,4 +19,6 @@ include ':app',
         ':feature:first-api',
         ':feature:first-impl',
         ':feature:search-api',
-        ':feature:search-impl'
+        ':feature:search-impl',
+        ':feature:basket-api',
+        ':feature:basket-impl'

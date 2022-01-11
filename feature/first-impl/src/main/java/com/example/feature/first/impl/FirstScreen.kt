@@ -1,5 +1,6 @@
 package com.example.feature.first.impl
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -26,18 +28,12 @@ internal fun FirstScreen(navController: NavHostController) {
             text = "Rendez-Vous",
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(36.dp),
-            fontSize = 24.sp
+            fontSize = 28.sp
         )
-        SimpleButton(text = "На главную") {
+        SimpleButton(text = "Войти") {
             val homeFeature = DependencyProvider.homeFeature()
             navController.popBackStack()
             navController.navigate(homeFeature.homeRoute())
-        }
-
-        SimpleButton(text = "В профиль") {
-            val settingsFeature = DependencyProvider.profileFeature()
-            navController.popBackStack()
-            navController.navigate(settingsFeature.profileRoute())
         }
     }
 }
@@ -45,8 +41,10 @@ internal fun FirstScreen(navController: NavHostController) {
 @Composable
 private fun SimpleButton(text: String, onClick: () -> Unit) {
     Button(
-        modifier = Modifier.padding(16.dp),
-        onClick = onClick
+        modifier = Modifier
+            .padding(18.dp)
+            .background(Color.Magenta),
+        onClick = onClick,
     ) {
         Text(text)
     }

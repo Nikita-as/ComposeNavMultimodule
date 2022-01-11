@@ -23,6 +23,11 @@ enum class BottomTabs(
         R.drawable.ic_search,
         DependencyProvider.searchFeature().searchRoute()
     ),
+    BASKET(
+        R.string.basket,
+        R.drawable.ic_bag,
+        DependencyProvider.basketFeature().basketRoute()
+    ),
     PROFILE(
         R.string.profile,
         R.drawable.ic_profile,
