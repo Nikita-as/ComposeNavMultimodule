@@ -1,5 +1,6 @@
 package com.example.feature.home.impl
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -16,6 +17,7 @@ class HomeFeatureImpl : HomeFeatureApi {
 
     override fun homeRoute() = baseRoute
 
+    @ExperimentalFoundationApi
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
         navController: NavHostController,

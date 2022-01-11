@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.core.dependencyprovider.DependencyProvider.homeFeature
 
+
 @Composable
 fun BasketScreen(modifier: Modifier, navController: NavController) {
     Column(
@@ -39,7 +40,7 @@ fun BasketScreen(modifier: Modifier, navController: NavController) {
                 contentColor = Color.White
             )
         ) {
-            Text(text = "Переход на главную")
+            Text(text = "Переход на главную", fontSize = 22.sp)
         }
     }
 }
