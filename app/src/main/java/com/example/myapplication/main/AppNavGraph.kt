@@ -43,5 +43,10 @@ fun AppNavGraph(
             navController = navController,
             modifier = modifier
         )
+        register(
+            DependencyProvider.favoriteFeature(),
+            navController = navController,
+            modifier = modifier
+        )
     }
 }

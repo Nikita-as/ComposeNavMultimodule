@@ -9,7 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -49,14 +51,14 @@ fun BottomBar(navController: NavController, tabs: Array<BottomTabs>) {
     if (currentRoute in routes) {
         BottomNavigation(
             Modifier.navigationBarsHeight(additional = 56.dp),
-            backgroundColor = Color.Magenta,
+            backgroundColor = Color.White,
             contentColor = Color.Black
 
         ) {
             tabs.forEach { tab ->
                 BottomNavigationItem(
                     icon = { Icon(painterResource(tab.icon), contentDescription = null) },
-                    label = { Text(stringResource(tab.title).uppercase(Locale.getDefault())) },
+                    label = { Text(stringResource(tab.title).uppercase(Locale.getDefault()), fontSize = 9.sp, softWrap = false, fontStyle = FontStyle.Normal) },
                     selected = currentRoute == tab.route,
                     onClick = {
                         if (tab.route != currentRoute) {
@@ -70,8 +72,8 @@ fun BottomBar(navController: NavController, tabs: Array<BottomTabs>) {
                         }
                     },
                     alwaysShowLabel = false,
-                    selectedContentColor = Color.Black,
-                    unselectedContentColor = Color.White,
+                    selectedContentColor = Color.Magenta,
+                    unselectedContentColor = Color.Black,
                     modifier = Modifier.navigationBarsPadding()
                 )
             }

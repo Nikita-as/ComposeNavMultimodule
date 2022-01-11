@@ -28,6 +28,11 @@ enum class BottomTabs(
         R.drawable.ic_bag,
         DependencyProvider.basketFeature().basketRoute()
     ),
+    FAVORITE(
+        R.string.favorite,
+        R.drawable.ic_favorite,
+        DependencyProvider.favoriteFeature().favoriteRoute()
+    ),
     PROFILE(
         R.string.profile,
         R.drawable.ic_profile,

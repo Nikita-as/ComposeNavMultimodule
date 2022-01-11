@@ -25,4 +25,5 @@ dependencies {
     implementation project(':feature:first-api')
     implementation project(':feature:search-api')
     implementation project(':feature:basket-api')
+    implementation project(':feature:favorite-api')
 }

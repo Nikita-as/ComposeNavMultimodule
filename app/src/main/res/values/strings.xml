@@ -4,4 +4,5 @@
     <string name="search">Каталог</string>
     <string name="profile">Профиль</string>
     <string name="basket">Корзина</string>
+    <string name="favorite">Избранное</string>
 </resources>

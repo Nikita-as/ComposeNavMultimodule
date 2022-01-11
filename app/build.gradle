@@ -72,4 +72,6 @@ dependencies {
     implementation project(':feature:search-impl')
     implementation project(':feature:basket-api')
     implementation project(':feature:basket-impl')
+    implementation project(':feature:favorite-api')
+    implementation project(':feature:favorite-impl')
 }

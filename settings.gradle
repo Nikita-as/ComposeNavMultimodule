@@ -21,4 +21,6 @@ include ':app',
         ':feature:search-api',
         ':feature:search-impl',
         ':feature:basket-api',
-        ':feature:basket-impl'
+        ':feature:basket-impl',
+        ':feature:favorite-api',
+        ':feature:favorite-impl'
