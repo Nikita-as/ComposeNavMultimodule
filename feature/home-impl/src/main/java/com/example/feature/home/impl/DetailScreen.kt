@@ -46,9 +46,9 @@ fun ScreenDetail(modifier: Modifier, navController: NavHostController) {
             modifier = Modifier.padding(16.dp),
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.Magenta, contentColor = Color.White),
             onClick = {
-                navController.navigate(InternalHomeFeatureApi.screenB(parameter = text))
+//                navController.navigate(InternalHomeFeatureApi.screenB(parameter = text))
             }) {
-            Text("Оформить", fontSize = 18.sp)
+            Text("Выбранная вещь", fontSize = 18.sp)
         }
     }
 }

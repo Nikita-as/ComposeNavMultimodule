@@ -25,7 +25,7 @@ internal object InternalHomeFeatureApi : FeatureApi {
 
     fun screenA() = screenDetailRoute
 
-    fun screenB(parameter: String) = "$screenOrderRoute/${parameter}"
+    fun screenB(parameter: Int) = "$screenOrderRoute/${parameter}"
 
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
