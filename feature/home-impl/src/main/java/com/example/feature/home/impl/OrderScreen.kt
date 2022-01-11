@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun ScreenB(modifier: Modifier, argument: String) {
+fun ScreenOrder(modifier: Modifier, argument: String) {
     Column(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -24,7 +24,7 @@ fun ScreenB(modifier: Modifier, argument: String) {
             fontSize = 24.sp
         )
         Text(
-            "Id = $argument",
+            "Id вещи = $argument",
             modifier = Modifier.padding(16.dp),
             fontSize = 24.sp
         )

@@ -18,7 +18,7 @@ fun FavoriteScreen(modifier: Modifier) {
     ) {
         Text(
             "Избранное",
-            fontSize = 24.sp
+            fontSize = 28.sp
         )
     }
 }

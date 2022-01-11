@@ -8,24 +8,24 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.navigation
 import com.example.core.feature_api.FeatureApi
-import com.example.feature.home.impl.ScreenA
-import com.example.feature.home.impl.ScreenB
+import com.example.feature.home.impl.ScreenDetail
+import com.example.feature.home.impl.ScreenOrder
 
 /**
  * Внутренне API фичи для навигации по внутренним экранам
  */
 internal object InternalHomeFeatureApi : FeatureApi {
 
-    private const val scenarioABRoute = "home/scenarioABRoute"
+    private const val scenarioDetailOrderRoute = "home/scenarioDetailOrderRoute"
     private const val parameterKey = "parameterKey"
-    private const val screenBRoute = "home/screenB"
-    private const val screenARoute = "home/screenA"
+    private const val screenOrderRoute = "home/screenOrder"
+    private const val screenDetailRoute = "home/detailScreen"
 
-    fun scenarioABRoute() = scenarioABRoute
+    fun scenarioDetailOrderRoute() = scenarioDetailOrderRoute
 
-    fun screenA() = screenARoute
+    fun screenA() = screenDetailRoute
 
-    fun screenB(parameter: String) = "$screenBRoute/${parameter}"
+    fun screenB(parameter: String) = "$screenOrderRoute/${parameter}"
 
     override fun registerGraph(
         navGraphBuilder: NavGraphBuilder,
@@ -34,21 +34,21 @@ internal object InternalHomeFeatureApi : FeatureApi {
     ) {
 
         navGraphBuilder.navigation(
-            route = scenarioABRoute,
-            startDestination = screenARoute
+            route = scenarioDetailOrderRoute,
+            startDestination = screenDetailRoute
         ) {
 
-            composable(route = screenARoute) {
-                ScreenA(modifier = modifier, navController = navController)
+            composable(route = screenDetailRoute) {
+                ScreenDetail(modifier = modifier, navController = navController)
             }
 
             composable(
-                route = "$screenBRoute/{$parameterKey}",
+                route = "$screenOrderRoute/{$parameterKey}",
                 arguments = listOf(navArgument(parameterKey) { type = NavType.StringType })
             ) { backStackEntry ->
                 val arguments = requireNotNull(backStackEntry.arguments)
                 val argument = arguments.getString(parameterKey)
-                ScreenB(modifier = modifier, argument = argument.orEmpty())
+                ScreenOrder(modifier = modifier, argument = argument.orEmpty())
             }
         }
     }

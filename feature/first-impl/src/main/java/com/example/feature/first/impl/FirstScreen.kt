@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonColors
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -42,10 +44,10 @@ internal fun FirstScreen(navController: NavHostController) {
 private fun SimpleButton(text: String, onClick: () -> Unit) {
     Button(
         modifier = Modifier
-            .padding(18.dp)
-            .background(Color.Magenta),
+            .padding(18.dp),
         onClick = onClick,
+        colors = ButtonDefaults.buttonColors(backgroundColor = Color.Magenta, contentColor = Color.White)
     ) {
-        Text(text)
+        Text(text, fontSize = 18.sp)
     }
 }

@@ -18,7 +18,7 @@ fun BasketScreen(modifier: Modifier) {
     ) {
         Text(
             "Корзина",
-            fontSize = 24.sp
+            fontSize = 28.sp
         )
     }
 }
