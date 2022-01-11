@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.core.dependencyprovider.DependencyProvider.homeFeature
+import com.example.core.dependencyprovider.DependencyProvider.searchFeature
 
 
 @Composable
@@ -32,7 +33,7 @@ fun BasketScreen(modifier: Modifier, navController: NavController) {
             modifier = Modifier.padding(16.dp),
             onClick = {
                 navController.navigate(
-                    route = homeFeature().homeRoute()
+                    route = searchFeature().searchRoute()
                 )
             },
             colors = ButtonDefaults.buttonColors(
@@ -40,7 +41,7 @@ fun BasketScreen(modifier: Modifier, navController: NavController) {
                 contentColor = Color.White
             )
         ) {
-            Text(text = "Переход на главную", fontSize = 22.sp)
+            Text(text = "Выбрать товар", fontSize = 22.sp)
         }
     }
 }

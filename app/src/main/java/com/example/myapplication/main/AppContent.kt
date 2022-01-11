@@ -58,7 +58,7 @@ fun BottomBar(navController: NavController, tabs: Array<BottomTabs>) {
             tabs.forEach { tab ->
                 BottomNavigationItem(
                     icon = { Icon(painterResource(tab.icon), contentDescription = null) },
-                    label = { Text(stringResource(tab.title).uppercase(Locale.getDefault()), fontSize = 9.sp, softWrap = false, fontStyle = FontStyle.Normal) },
+                    label = { Text(stringResource(tab.title), fontSize = 10.sp, softWrap = false, fontStyle = FontStyle.Normal) },
                     selected = currentRoute == tab.route,
                     onClick = {
                         if (tab.route != currentRoute) {

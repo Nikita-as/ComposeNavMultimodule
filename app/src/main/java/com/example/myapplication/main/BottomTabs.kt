@@ -15,7 +15,7 @@ enum class BottomTabs(
 
     HOME(
         R.string.home,
-        R.drawable.ic_check,
+        R.drawable.ic_home,
         DependencyProvider.homeFeature().homeRoute()
     ),
     SEARCH(
